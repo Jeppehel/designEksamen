@@ -1,0 +1,60 @@
+
+/* Style the navbar */
+#navbar {
+    overflow: hidden;
+}
+
+/* Navbar links */
+#navbar a {
+    float: left;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Page content */
+.content {
+    padding: 16px;
+}
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000000;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+    padding-top: 72px;
+}
+
+.jumbotron{
+    background-image: url("");
+    background-color: black;
+    background-size: 100%;
+    border-radius: 0;
+    color: white;
+    text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+
+}
+#imageLogo{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 215px;
+
+}
+#headerBackground{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#footer{
+
+}
