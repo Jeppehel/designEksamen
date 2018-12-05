@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Podcasts</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="icon" href="../static/logo.png" type="image/gif"/>
+
+
+    <link rel="stylesheet" th:href="../static/nav_css.css">
+    <script th:src="../static/nav-script.js"></script>
+</head>
+<body>
+<div th:replace="Header :: nav-bar"/>
+
+<div class="container">
+
+        <div class="row justify-content-md-center">
+
+            <div class="col col-lg-2">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/v64KOxKVLVg" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+</body>
+</html>
