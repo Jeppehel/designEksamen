@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 package com.example.demo.config;
 
 
@@ -24,3 +25,5 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 //    }
 //
 //}
+=======
+>>>>>>> Stashed changes
