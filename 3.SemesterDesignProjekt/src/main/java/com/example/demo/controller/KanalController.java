@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class KanalController {
 
     @GetMapping("/kanal")
-    public String Kanal(){
+    public String Kanal(Model model){
         return "kanal";
     }
 }
