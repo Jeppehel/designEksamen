@@ -12,22 +12,78 @@
     <link rel="icon" href="../static/logo.png" type="image/gif"/>
 
 
-    <link rel="stylesheet" th:href="../static/nav_css.css">
-    <script th:src="../static/nav-script.js"></script>
+    <link rel="stylesheet" href="../static/nav_css.css">
+    <script src="../static/nav-script.js"></script>
 </head>
 <body>
-<div th:replace="Header :: nav-bar"/>
+
+    <div class="jumbotron text-center " style="margin-bottom:0;">
+        <div class="container">
+            <img src="../static/logo.png" alt="logoImage" id="imageLogo"/>
+            <div style="z-index: 10000000;">
+                <h2>Sort på hvidt</h2>
+                <p> bla bla bla...</p>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
 
 <div class="container">
 
-        <div class="row justify-content-md-center">
+    <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
 
-            <div class="col col-lg-2">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/v64KOxKVLVg" allowfullscreen></iframe>
+        <!--Grid column-->
+        <div class="col-lg-5 col-xl-4 mb-4 mt-4">
+            <!--Featured image-->
+            <div class="view overlay rounded z-depth-1-half">
+                <div class="view overlay">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cXTThxoywNQ" allowfullscreen=""></iframe>
+                    </div>
                 </div>
             </div>
         </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4 mt-4">
+            <h3 class="mb-3 font-weight-bold dark-grey-text">
+                <strong>MDB Quick Start</strong>
+            </h3>
+            <p class="grey-text">Get started with MDBootstrap, the world's most popular Material Design framework for building responsive,
+                mobile-first sites.</p>
+            <p>
+                <strong>5 minutes, a few clicks and... done. You will be surprised at how easy it is.</strong>
+            </p>
+            <a href="https://www.youtube.com/watch?v=cXTThxoywNQ" target="_blank" class="btn btn-primary btn-md waves-effect waves-light">Start tutorial
+                <i class="fa fa-play ml-2"></i>
+            </a>
+        </div>
+        <!--Grid column-->
+
+    </div>
+    <hr>
 </div>
 
 
