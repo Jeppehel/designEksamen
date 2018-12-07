@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 package com.example.demo.config;
 
 
