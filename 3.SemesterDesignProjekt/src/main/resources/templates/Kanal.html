@@ -13,7 +13,7 @@
 
 <div class="container">
 
-    <div th:each="Kanal : ${Kanals}">
+    <div th:each="Podcast : ${podcasts}">
         <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
 
             <!--Grid column-->
@@ -22,7 +22,7 @@
                 <div class="view overlay rounded z-depth-1-half">
                     <div class="view overlay">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" th:src="@{Kanal.url}" allowfullscreen=""></iframe>
+                            <iframe class="embed-responsive-item" th:src="@{podcasts.url}" allowfullscreen=""></iframe>
                         </div>
                     </div>
                 </div>
@@ -31,15 +31,8 @@
 
             <!--Grid column-->
             <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4 mt-4">
-                <h3 class="mb-3 font-weight-bold dark-grey-text">
-                    <strong>MDB Quick Start</strong>
-                </h3>
-                <p class="grey-text">Get started with MDBootstrap, the world's most popular Material Design framework for building responsive,
-                    mobile-first sites.</p>
-                <p>
-                    <strong>5 minutes, a few clicks and... done. You will be surprised at how easy it is.</strong>
-                </p>
-                <a th:href="@{kanal.url}" target="_blank" class="btn btn-primary btn-md waves-effect waves-light">Start tutorial
+                <p class="grey-text" th:text="${podcast.description}"/>
+                <a th:href="@{podcasts.url}" target="_blank" class="btn btn-primary btn-md waves-effect waves-light">Start tutorial
                     <i class="fa fa-play ml-2"></i>
                 </a>
             </div>
@@ -49,8 +42,6 @@
         <hr>
     </div>
 </div>
-
-
 
 </body>
 </html>

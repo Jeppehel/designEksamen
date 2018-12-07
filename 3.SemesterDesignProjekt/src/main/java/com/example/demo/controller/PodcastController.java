@@ -8,13 +8,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.net.URL;
 
 @Controller
-public class KanalController {
+public class PodcastController {
 
 
 
 
     @GetMapping("/kanal")
     public String Kanal(Model model){
+
+
+
         return "kanal";
     }
 

@@ -1,24 +1,37 @@
 package com.example.demo.domain;
 
-import org.springframework.stereotype.Component;
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.net.URL;
 
-@Component
-public class Kanal {
+@Entity
+public class Podcast {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long Id;
     private String overskrift;
-    private URL url;
+    private String url;
     private String Description;
 
-    public Kanal(){
+    public Podcast(){
 
     }
 
-    public Kanal(String overskrift, URL url, String description) {
+    public Podcast(String overskrift, String url, String description) {
         this.overskrift = overskrift;
         this.url = url;
         Description = description;
+    }
+
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
     }
 
     public String getOverskrift() {
@@ -29,11 +42,11 @@ public class Kanal {
         this.overskrift = overskrift;
     }
 
-    public URL getUrl() {
+    public String getUrl() {
         return url;
     }
 
-    public void setUrl(URL url) {
+    public void setUrl(String url) {
         this.url = url;
     }
 
@@ -47,7 +60,7 @@ public class Kanal {
 
     @Override
     public String toString() {
-        return "Kanal{" +
+        return "Podcast{" +
                 "overskrift='" + overskrift + '\'' +
                 ", url=" + url +
                 ", Description='" + Description + '\'' +

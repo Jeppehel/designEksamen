@@ -16,9 +16,9 @@ public class DatabaseConfig {
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
 
         driverManagerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        driverManagerDataSource.setUrl("jdbc:mysql://sph.cg1jcfnkmz1g.eu-central-1.rds.amazonaws.com");
+        driverManagerDataSource.setUrl("jdbc:mysql://sphdatabase.cg1jcfnkmz1g.eu-central-1.rds.amazonaws.com:3306/db");
         driverManagerDataSource.setUsername("sph_db");
-        driverManagerDataSource.setPassword("{df3!D8nd%Am");
+        driverManagerDataSource.setPassword("P4h!g9fK_bdx%");
 
         return driverManagerDataSource;
     }
