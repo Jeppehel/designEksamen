@@ -5,6 +5,8 @@ import com.example.demo.repositories.PodcastRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PodcastService implements IPodcast {
 
@@ -29,6 +31,11 @@ public class PodcastService implements IPodcast {
 
         podcastRepository.save(podcast);
 
+    }
+
+    public List<Podcast> viewPodcast() {
+        List<Podcast> podcast = (List<Podcast>) podcastRepository.findAll();
+        return podcast;
     }
 
     public Iterable<Podcast> fetchAll() {

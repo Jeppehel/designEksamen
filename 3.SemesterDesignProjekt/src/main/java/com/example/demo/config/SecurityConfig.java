@@ -9,7 +9,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 import javax.sql.DataSource;
-
+//
 //    @Configuration
 //    @EnableAutoConfiguration
 //    public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -34,4 +34,4 @@ import javax.sql.DataSource;
 //            http.exceptionHandling().accessDeniedPage("/user");
 //        }
 //    }
-//
+

@@ -31,7 +31,6 @@
             </div>
             <div class="col-sm-8">
 
-<!-- Blog indhold ------------------------------------------------------------->
 
                 <div th:if="${admin}">
                     <a th:href="@{/submitBlog}"><button>Opret nyt indlæg</button></a>
@@ -49,11 +48,6 @@
                         <a th:href="${'submitComment/' + blogEntry.id}"><h5>Kommentarer: <h5 th:text="${blogEntry.numberOfComments}"/></h5></a>
                     </div>
                 </div>
-
-
-
-<!---------------------------------------------------------------------------------->
-
             </div>
         </div>
     </div>

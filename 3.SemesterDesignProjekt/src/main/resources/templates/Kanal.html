@@ -13,7 +13,7 @@
 
 <div class="container">
 
-    <div th:each="Podcast : ${podcasts}">
+    <div th:each="podcast : ${podcasts}">
         <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
 
             <!--Grid column-->
@@ -22,7 +22,7 @@
                 <div class="view overlay rounded z-depth-1-half">
                     <div class="view overlay">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" th:src="@{podcasts.url}" allowfullscreen=""></iframe>
+                            <iframe class="embed-responsive-item" th:src="${podcast.url}" allowfullscreen=""></iframe>
                         </div>
                     </div>
                 </div>
@@ -31,8 +31,9 @@
 
             <!--Grid column-->
             <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4 mt-4">
+                <h3 th:text="${podcast.overskrift}"/>
                 <p class="grey-text" th:text="${podcast.description}"/>
-                <a th:href="@{podcasts.url}" target="_blank" class="btn btn-primary btn-md waves-effect waves-light">Start tutorial
+                <a th:href="${podcast.url}" target="_blank" class="btn btn-primary btn-md waves-effect waves-light">see the video
                     <i class="fa fa-play ml-2"></i>
                 </a>
             </div>

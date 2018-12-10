@@ -10,6 +10,7 @@
     display: block;
     text-align: center;
     text-decoration: none;
+    color: white;
 }
 
 /* Page content */
@@ -30,7 +31,6 @@
 }
 
 .jumbotron{
-    background-image: url("");
     background-color: black;
     background-size: 100%;
     border-radius: 0;
