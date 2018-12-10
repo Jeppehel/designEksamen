@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Sort på Hvidt - Blog</title>
+    <div th:replace="Header :: header"/>
+
+</head>
+<body>
+<div th:replace="Header :: nav-bar"/>
+
+<div class="content">
+    <div class="container" style="margin-top:30px;">
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>About Me</h2>
+                <h5>Photo of me:</h5>
+                <img src="https://via.placeholder.com/350x200?text=SoMe+Billede" alt="SoMe billede" class="fluid-img"/>
+                <p>Mit navn ... alder ... intresse .... hvorfor jeg startede.... </p>
+                <h3>Social media links</h3>
+                <p>Følg mig på de sociale media</p>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                </ul>
+                <hr class="d-sm-none">
+            </div>
+            <div class="col-sm-8">
+
+                <!-- Dynamisk blog indhold ------------------------------------------------------------->
+
+                <div style="margin-top: 12px; margin-bottom: 12px; padding: 8px; border-style: groove">
+
+                    <div style="margin: 30px; padding: 20px; border-radius: 25px">
+                        <h3 th:text="${blogEntry.title}"/>
+                        <i><p th:text="${blogEntry.date}"/></i>
+                        <p th:text="${blogEntry.content}"/>
+                    </div>
+                </div>
+
+                <div th:each="comment: ${comments}">
+                    <div style="margin: 30px; padding: 20px; border-radius: 25px">
+                        <h6 th:text="${comment.user}"/>
+                        <i><p th:text="${comment.date}"/></i>
+                        <p th:text="${comment.content}"/>
+                    </div>
+                </div>
+
+
+                <form method="post" th:action="@{/submitComment}">
+                    <p>Bruger:</p>
+                    <input type="text" th:field="${comment.user}">
+                    <br>
+                    <textarea name="content" rows="10" cols="30" th:field="${comment.content}"/>
+                    <input type="submit" value="Send"/>
+                </form>
+
+                <!------------------------------------------------>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="jumbotron text-center" style="margin-bottom:0" id="footer">
+    <p>Footer</p>
+</div>
+
+</body>
+<script th:src="@{/nav-script.js}"></script>
+</html>
