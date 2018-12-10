@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Forside</title>
+    <title>Sort på Hvidt - Blog</title>
     <div th:replace="Header :: header"/>
 
 </head>
@@ -13,6 +13,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <h2>About Me</h2>
+                <h5>Photo of me:</h5>
                 <img src="https://via.placeholder.com/350x200?text=SoMe+Billede" alt="SoMe billede" class="fluid-img"/>
                 <p>Mit navn ... alder ... intresse .... hvorfor jeg startede.... </p>
                 <h3>Social media links</h3>
@@ -28,17 +29,22 @@
                 <hr class="d-sm-none">
             </div>
             <div class="col-sm-8">
-                <h2>ARTIKEL OVERSKRIFT</h2>
-                <h5>Title description, Dec 7, 2017</h5>
-                <img src="https://via.placeholder.com/730x200" alt="artikkel billede"/>
-                <p>Some text..</p>
-                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                <br>
-                <h2>ARTIKEL OVERSKRIFT</h2>
-                <h5>Title description, Sep 2, 2017</h5>
-                <img src="https://via.placeholder.com/730x200" alt="artikkel billede"/>
-                <p>Some text..</p>
-                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+
+                <!-- Dynamisk blog indhold ------------------------------------------------------------->
+
+
+
+                <form method="post" th:action="@{/submitBlog}">
+                    <p>Titel:</p>
+                    <input type="text" th:field="${blogEntry.title}">
+                    <br>
+                    <br>
+                    <textarea name="content" rows="10" cols="30" th:field="${blogEntry.content}"/>
+                    <input type="submit" value="Send"/>
+                </form>
+
+                <!------------------------------------------------>
+
             </div>
         </div>
     </div>
