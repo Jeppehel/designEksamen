@@ -27,7 +27,7 @@ public class PodcastController {
 
     public String podcastAdd(@RequestParam String overskrift,@RequestParam URL url, @RequestParam String description){
 
-
+        //podcast.setEmbedUrl();
 
         return "/podcastAdd";
     }
