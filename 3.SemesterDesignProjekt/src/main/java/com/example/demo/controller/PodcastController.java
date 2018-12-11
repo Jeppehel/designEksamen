@@ -5,8 +5,7 @@ import com.example.demo.services.IPodcast;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.net.URL;
 
@@ -25,10 +24,15 @@ public class PodcastController {
         return "kanal";
     }
 
-    public String podcastAdd(@RequestParam String overskrift,@RequestParam URL url, @RequestParam String description){
+    @RequestMapping(value = "/submitPodcast", method = RequestMethod.GET)
+    public String podcastAdd(Model model){
+        model.addAttribute("podcast", new Podcast());
+        return "SubmitPodcast";
+    }
 
-        //podcast.setEmbedUrl();
-
-        return "/podcastAdd";
+    @RequestMapping(value = "/submitPodcast", method = RequestMethod.POST)
+    public String podcastAdd(@ModelAttribute Podcast podcast){
+        iPodcast.createPodcast(podcast);
+        return "redirect:/";
     }
 }

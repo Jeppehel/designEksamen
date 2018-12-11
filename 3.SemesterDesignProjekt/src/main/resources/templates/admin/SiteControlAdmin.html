@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Podcasts</title>
+
+    <div th:replace="Header :: header"/>
+
+</head>
+<body>
+
+<div th:replace="Header :: nav-bar"/>
+
+<div class="container">
+
+    <br>
+    <a th:href="@{/submitPodcast}"><button>Opret nyt podcast indlæg</button></a>
+    <a th:href="@{/submitBlog}"><button>Opret nyt blog indlæg</button></a>
+
+
+</div>
+
+</body>
+<script th:src="@{/nav-script.js}"></script>
+</html>

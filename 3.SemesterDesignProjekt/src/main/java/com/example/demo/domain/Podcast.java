@@ -53,7 +53,7 @@ public class Podcast {
     }
 
     public void setEmbedUrl() {
-        embedUrl = "www.youtube.com/embed/" + url.substring(url.length() - 11);
+        embedUrl = "https://www.youtube.com/embed/" + url.substring(url.length() - 11);
     }
 
     public String getEmbedUrl() {

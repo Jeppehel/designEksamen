@@ -14,7 +14,8 @@ public class PodcastService implements IPodcast {
     PodcastRepository podcastRepository;
 
     public void createPodcast(Podcast podcast) {
-        podcastRepository.save(new Podcast(podcast.getOverskrift(),podcast.getUrl(),podcast.getDescription()));
+        podcast.setEmbedUrl();
+        podcastRepository.save(podcast);
     }
 
     public void deletePodcast(Long id) {

@@ -10,18 +10,17 @@
 
 <div class="content">
 
-
-
-                <form method="post" th:action="@{/submitBlog}">
-                    <p>Titel:</p>
-                    <input type="text" th:field="${blogEntry.title}">
+                <form method="post" th:action="@{/submitPodcast}">
+                    <p>Overskrift:</p>
+                    <input type="text" th:field="${podcast.overskrift}">
                     <br>
+                    <p>Hyperlink:</p>
+                    <input type="text" th:field="${podcast.url}">
                     <br>
-                    <textarea name="content" rows="10" cols="30" th:field="${blogEntry.content}"/>
+                    <p>Beskrivelse:</p>
+                    <input type="text" th:field="${podcast.description}">
                     <input type="submit" value="Send"/>
                 </form>
-
-
 
 </div>
 <div class="jumbotron text-center" style="margin-bottom:0" id="footer">
