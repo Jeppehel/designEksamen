@@ -18,4 +18,9 @@ public class HomeController {
         model.addAttribute("podcasts", podcastService.fetchAll());
         return "/index";
     }
+
+    @GetMapping("/login")
+    public String login() {
+        return "/login";
+    }
 }

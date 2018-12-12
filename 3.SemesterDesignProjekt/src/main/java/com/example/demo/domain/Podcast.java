@@ -14,6 +14,7 @@ public class Podcast {
     private Long Id;
     private String overskrift;
     private String url;
+    private String embedUrl;
     private String Description;
 
     public Podcast(){
@@ -24,6 +25,7 @@ public class Podcast {
         this.overskrift = overskrift;
         this.url = url;
         Description = description;
+        embedUrl = "https://www.youtube.com/embed/" + url.substring(url.length() - 11);
     }
 
     public Long getId() {
@@ -48,6 +50,14 @@ public class Podcast {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public void setEmbedUrl() {
+        embedUrl = "https://www.youtube.com/embed/" + url.substring(url.length() - 11);
+    }
+
+    public String getEmbedUrl() {
+        return embedUrl;
     }
 
     public String getDescription() {
