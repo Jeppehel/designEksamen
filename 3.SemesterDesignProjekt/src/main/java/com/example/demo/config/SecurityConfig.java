@@ -9,7 +9,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 import javax.sql.DataSource;
-//
+
 //    @Configuration
 //    @EnableAutoConfiguration
 //    public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -29,7 +29,8 @@ import javax.sql.DataSource;
 //        @Override
 //        protected void configure(HttpSecurity http) throws Exception {
 //            http.csrf().disable()
-//            .http.authorizeRequests().antMatchers("/").hasRole("ADMIN")
+//            .authorizeRequests().antMatchers("/").permitAll().
+//                    antMatchers("/adm/**").hasRole("ADMIN")
 //                    .anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and().logout()
 //                    .permitAll();
 //            http.exceptionHandling().accessDeniedPage("/AccessDeniedPage");

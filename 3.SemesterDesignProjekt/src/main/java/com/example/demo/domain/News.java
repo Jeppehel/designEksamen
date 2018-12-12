@@ -10,7 +10,7 @@ import java.sql.Blob;
 import java.util.Date;
 
 @Entity
-public class Article {
+public class News {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,10 +23,10 @@ public class Article {
     private Blob image;
 
 
-    public Article() {
+    public News() {
     }
 
-    public Article(Date date, String title, String description, Blob image) {
+    public News(Date date, String title, String description, Blob image) {
         this.date = date;
         this.title = title;
         this.description = description;
@@ -75,7 +75,7 @@ public class Article {
 
     @Override
     public String toString() {
-        return "Article{" +
+        return "News{" +
                 "id=" + id +
                 ", date=" + date +
                 ", title='" + title + '\'' +
