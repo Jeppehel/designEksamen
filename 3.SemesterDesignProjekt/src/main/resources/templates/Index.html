@@ -3,11 +3,10 @@
 <head>
     <title>Forside</title>
     <div th:replace="Header :: header"/>
-
 </head>
+
 <body>
 <div th:replace="Header :: nav-bar"/>
-
 <div class="content">
     <div class="container" style="margin-top:30px;">
         <div class="row">
@@ -41,5 +40,29 @@
 </div>
 
 </body>
-<script th:src="@{/nav-script.js}"></script>
+<!--<script th:src="@{/nav-script.js}"></script>-->
+
+
+
+
+<script>
+    // When the user scrolls the page, execute myFunction
+    window.onscroll = function() {myFunction()};
+
+    // Get the navbar
+    var navbar = document.getElementById("navbar");
+
+    // Get the offset position of the navbar
+    var sticky = navbar.offsetTop;
+
+    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+
+</script>
 </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Podcasts</title>
+
+    <div th:replace="Header :: header"/>
+
+</head>
+<body>
+
+<div th:replace="Header :: nav-bar"/>
+
+<div class="container">
+
+    <div th:each="podcast : ${podcasts}">
+        <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+
+            <!--Grid column-->
+            <div class="col-lg-5 col-xl-4 mb-4 mt-4">
+                <!--Featured image-->
+                <div class="view overlay rounded z-depth-1-half">
+                    <div class="view overlay">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" th:src="${podcast.embedUrl}" allowfullscreen=""></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4 mt-4">
+                <h3 th:text="${podcast.overskrift}"/>
+                <p class="grey-text" th:text="${podcast.description}"/>
+                <a>SLET</a>
+                <a th:href="${podcast.url}" target="_blank" class="btn btn-primary btn-md waves-effect waves-light">see the video
+                    <i class="fa fa-play ml-2"></i>
+                </a>
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <hr>
+    </div>
+</div>
+
+</body>
+<script th:src="@{/nav-script.js}"></script>
+</html>

@@ -16,7 +16,7 @@ public class PodcastController {
     IPodcast iPodcast;
 
 
-    @GetMapping("/kanal")
+    @GetMapping(value = "/kanal")
     public String Kanal(Model model){
 
         model.addAttribute("podcasts", iPodcast.viewPodcast());
@@ -34,5 +34,13 @@ public class PodcastController {
     public String podcastAdd(@ModelAttribute Podcast podcast){
         iPodcast.createPodcast(podcast);
         return "redirect:/";
+    }
+
+    @GetMapping(value = "/deletePodcast")
+    public String DeletePodcast(Long id){
+
+        iPodcast.deletePodcast(id);
+
+        return "/deletePodcast";
     }
 }
