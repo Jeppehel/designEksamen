@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.Date;
 
 @Controller
+@RequestMapping(value = "/blog/")
 public class BlogController {
 
     private BlogService blogService;

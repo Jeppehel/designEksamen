@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 @EnableAutoConfiguration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    /*@Autowired
+    @Autowired
     DataSource dataSource;
 
     @Autowired
@@ -23,9 +23,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .usersByUsernameQuery("select username,password, enabled from users where username=?")
                 .authoritiesByUsernameQuery("select username, role from user_roles where username=?");
     }
-*/
 
-    @Autowired
+
+   @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
                 .withUser("user")
@@ -39,12 +39,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http.csrf().disable();
         http.authorizeRequests()
-                .antMatchers("/**").permitAll()
-                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/", "/logo.png", "/Kanal_css.css","/nav-script.js","/nav_css.css","/blog/**").permitAll()
+                .antMatchers("/admin", "/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and().logout()
                 .permitAll();
-        //http.exceptionHandling().accessDeniedPage("/user");
+        //http.exceptionHandling().accessDeniedPage("/");
     }
 }
 
