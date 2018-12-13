@@ -1,19 +1,15 @@
 package com.example.demo.services;
 
 import com.example.demo.domain.News;
-import com.example.demo.repositories.NewsRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 
-public class NewsService implements NewsServiceImpl {
+public interface NewsService {
 
-    @Autowired
-    private NewsRepository newsRepository;
+    void createNews (News news);
 
-    public void createNews(News news){
+    News getNewsByID(int id);
 
-        newsRepository.save(new News(news.getDate(), news.getTitle(), news.getDescription(), news.getImage()));
+    Iterable<News> fetchAllNews();
 
-    }
 
 
 }

@@ -29,6 +29,7 @@ public class BlogServiceImpl implements BlogService {
         return null;
     }
 
+
     @Override
     public Iterable<BlogEntry> fetchAllBlogs() {
         return blogRepository.findAll();

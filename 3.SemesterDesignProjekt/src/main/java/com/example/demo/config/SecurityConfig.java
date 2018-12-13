@@ -25,23 +25,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-   @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("user")
-                .password("password")
-                .roles("USER")
-                .and()
-                .withUser("admin")
-                .password("password")
-                .roles("ADMIN","USER");
-    }
+//   @Autowired
+//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.inMemoryAuthentication()
+//                .withUser("user")
+//                .password("password")
+//                .roles("USER")
+//                .and()
+//                .withUser("admin")
+//                .password("password")
+//                .roles("ADMIN","USER");
+//    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
         http.authorizeRequests()
-                .antMatchers("/").permitAll()
+                .antMatchers("/", "/logo.png", "/Kanal_css.css","/nav-script.js","/nav_css.css").permitAll()
                 .antMatchers("/admin", "/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and().logout()
                 .permitAll();
