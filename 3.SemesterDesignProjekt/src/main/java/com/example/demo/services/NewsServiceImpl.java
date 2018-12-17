@@ -6,6 +6,8 @@ import com.example.demo.repositories.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class NewsServiceImpl implements NewsService {
 
@@ -22,16 +24,34 @@ public class NewsServiceImpl implements NewsService {
         return newsRepository.findAll();
     }
 
-
+    public List<News> viewNews() {
+        List<News> news = (List<News>) newsRepository.findAll();
+        return news;
+    }
     
     public News getNewsByID(int id) {
-        Iterable<News> allnews = newsRepository.findAll();
-        for(News news : allnews) {
+        Iterable<News> allNews = newsRepository.findAll();
+        for(News news : allNews) {
             if (news.getId() == id) {
                 return news;
             }
         }
         return null;
+    }
+
+
+    public void deleteNews(int id){
+
+        if (getNewsByID(id) != null){
+            newsRepository.delete(getNewsByID(id));
+        }
+
+    }
+
+    public void editNews(News news) {
+
+        newsRepository.save(news);
+
     }
 
 

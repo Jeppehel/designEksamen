@@ -1,12 +1,12 @@
 package com.example.demo.domain;
 
+import org.hibernate.validator.constraints.URL;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.sql.Blob;
 import java.util.Date;
 
 @Entity
@@ -20,13 +20,13 @@ public class News {
     private String title;
     private String description;
     //Binary Large Objects" and are used to store large amounts of binary data, such as images
-    private Blob image;
+    private String image;
 
 
     public News() {
     }
 
-    public News(Date date, String title, String description, Blob image) {
+    public News(Date date, String title, String description, String image) {
         this.date = date;
         this.title = title;
         this.description = description;
@@ -65,11 +65,11 @@ public class News {
         this.description = description;
     }
 
-    public Blob getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Blob image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

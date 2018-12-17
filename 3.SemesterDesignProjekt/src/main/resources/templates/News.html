@@ -1,37 +1,81 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-
-    <title>News</title>
+    <meta charset="UTF-8">
+    <title>Nyheder</title>
+    <!--<link rel="stylesheet" href="news.css">-->
+    <link rel="shortcut icon" href="https://julzmacagga.weebly.com/uploads/1/8/0/9/18095259/6016726.jpg" />
     <div th:replace="Header :: header"/>
 
 
+    <style>
+
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .wrapper{
+            position: relative;
+            max-width: 594px;
+            min-width: 300px;
+            margin: 30px auto 0;
+        }
+
+        .wrapper img{
+            margin-top: 25px;
+        }
+
+        .wrapper  .img-text {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+            width: 100%;
+            padding: 15px;
+        }
+    </style>
+
 </head>
 <body>
-    <div th:replace="Header :: nav-bar"/>
+<div th:replace="Header :: nav-bar"/>
 
     <div class="container">
-        <div th:each="news : ${news}">
+        <div th:each="news: ${news}">
+
+            <div class="wrapper">
+                <!--<div class="row">-->
+                    <!--<div class="column">-->
+                <a href="/blog/article" onclick="">
 
 
-            <a href="/fodbold/nyheder/tottenham-forlaenger-med-talentfuld-back/" onclick="">
-                <div class="news_block standard_box">
-                    <img class="photo" src="https://mobil.bold.dk/picture/490x/art119266.jpg">
-                    <div class="headline">
-                        Schmeickel er en mur! <span></span>
-                        <div class="ingress">
-                            Messi drømmer om at score på Schmeickel                            </div>
-                    </div>
-                </div>
-            </a>
+                        <img th:src="${news.image}" alt="No picture available!" >
+                            <div class="img-text">
+                            <h4 th:text="${news.title}"/>
+                            <a th:text="${news.date}"/>
+                            </div>
+                    <!--</div>-->
 
-
+                </a>
+                <!--</div>-->
+            </div>
         </div>
-
-
-
-
     </div>
 
+
+
+</div>
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+<script th:src="@{/nav-script.js}"></script>
 </html>

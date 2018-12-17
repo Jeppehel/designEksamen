@@ -1,0 +1,33 @@
+img {
+    padding-top: 25px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-size: 18px;
+}
+
+.wrapper{
+    position: relative;
+    max-width: 700px;
+    min-width: 450px;
+    margin: 30px auto 0;
+}
+
+.wrapper.img{
+    margin-bottom: -5px;
+    margin-top: 25px;
+}
+
+.wrapper .img-text {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 6);
+    color: #ffffff;
+    width: 100%;
+    padding: 15px;
+}
