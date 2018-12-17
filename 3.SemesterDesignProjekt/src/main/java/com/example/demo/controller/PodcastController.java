@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URL;
 
 @Controller
+@RequestMapping(value = "/kanaler/")
 public class PodcastController {
 
     @Autowired
